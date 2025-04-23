@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700&family=Nunito+Sans:wght@300;400;600&family=Roboto+Mono:wght@400&display=swap");
+@import "tailwindcss";
+
+:root {
+  /* LIGHT THEME */
+  --c-bg: #f6f9fa;
+  --c-surface: #ffffff;
+  --c-text: #373b3e;
+  --c-text-2: #556066;
+  --c-primary: #137a7f;
+  --c-primary-h: #0f6a6f;
+  --c-secondary: #e12885;
+  --c-border: #d9e1e6;
+  --c-highlight: #e3f5f5;
+
+  /* FONTS */
+  --ff-heading: "M PLUS Rounded 1c", sans-serif;
+  --ff-body: "Nunito Sans", system-ui, sans-serif;
+  --ff-mono: "Roboto Mono", monospace;
+}
+
+[data-theme="dark"] {
+  --c-bg: #1c1e20;
+  --c-surface: #26292b;
+  --c-text: #e6ebee;
+  --c-text-2: #9aa3aa;
+  --c-primary: #86cecb;
+  --c-primary-h: #6ab0ae;
+  --c-secondary: #e12885;
+  --c-border: #32373a;
+  --c-highlight: #0f2d2f;
+}
+
+/* RESET */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Globals */
+
+body {
+  background-color: var(--c-bg);
+  color: var(--c-text);
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--ff-heading);
+  font-weight: 700;
+}
+h4,
+h5,
+h6 {
+  font-family: var(--ff-heading);
+  font-weight: 500;
+}
+
+body,
+p,
+li,
+input,
+button {
+  font-family: var(--ff-body);
+}
+
+code,
+pre,
+.stat-number {
+  font-family: var(--ff-mono);
+}
