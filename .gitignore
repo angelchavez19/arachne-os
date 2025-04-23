@@ -1,0 +1,15 @@
+# compiled output
+dist
+node_modules
+build
+.output
+.data
+.nuxt
+.nitro
+.cache
+
+# Logs
+logs
+
+.env
+.env.*
