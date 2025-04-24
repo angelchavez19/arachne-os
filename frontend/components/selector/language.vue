@@ -14,6 +14,8 @@ watch(selectedLang, (newLang) => {
   <div class="inline-block relative w-40">
     <select
       v-model="selectedLang"
+      role="combobox"
+      aria-label="Select language"
       class="block w-full py-2 pl-3 pr-8 rounded-lg text-sm transition focus:outline-none focus:ring-2 focus:ring-primary appearance-none /* Tailwind: desactiva arrow nativo */"
       :style="{
         backgroundColor: 'var(--c-surface)',

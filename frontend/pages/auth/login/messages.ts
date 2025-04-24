@@ -4,6 +4,11 @@ export const loginMessagesEn = {
     description: "Login to ArachneOS",
   },
   title: "Welcome to ArachneOS",
+  social: {
+    google: {
+      text: "Login with Google",
+    },
+  },
 };
 
 export const loginMessagesEs = {
@@ -12,4 +17,9 @@ export const loginMessagesEs = {
     description: "Iniciar sesión en ArachneOS",
   },
   title: "Bienvenido a ArachneOS",
+  social: {
+    google: {
+      text: "Iniciar sesión con Google",
+    },
+  },
 };
