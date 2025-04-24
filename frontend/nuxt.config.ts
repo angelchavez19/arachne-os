@@ -7,7 +7,20 @@ export default defineNuxtConfig({
   css: ["~/assets/css/main.css"],
   vite: { plugins: [tailwindcss()] },
   dir: { pages: "routes" },
-  modules: ["@nuxtjs/i18n"],
+  modules: ["@nuxtjs/i18n", "@nuxt/icon", "@pinia/nuxt"],
+  app: {
+    head: {
+      link: [
+        { rel: "icon", href: "/favicon.ico", type: "image/vnd.microsoft.icon" },
+        {
+          rel: "icon",
+          href: "/favicon-dark.ico",
+          type: "image/vnd.microsoft.icon",
+          media: "(prefers-color-scheme: dark)",
+        },
+      ],
+    },
+  },
   i18n: {
     bundle: {
       optimizeTranslationDirective: false,
@@ -21,4 +34,5 @@ export default defineNuxtConfig({
     detectBrowserLanguage: false,
     vueI18n: "~/i18n.config.ts",
   },
+  icon: { customCollections: [{ prefix: "me", dir: "./assets/icons" }] },
 });

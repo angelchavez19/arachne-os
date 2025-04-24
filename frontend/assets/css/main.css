@@ -31,14 +31,6 @@
   --c-highlight: #0f2d2f;
 }
 
-/* RESET */
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 /* Globals */
 
 body {
