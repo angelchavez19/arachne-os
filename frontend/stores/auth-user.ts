@@ -22,7 +22,7 @@ export const useAuthUserStore = defineStore("authUser", () => {
 
   const logout = async () => {
     try {
-      await $axios.post(`${BACKEND_URL}/auth/logout`);
+      await $axios.get(`${BACKEND_URL}/auth/logout`);
       user.value = undefined;
       isAuthenticated.value = false;
     } catch (error) {
