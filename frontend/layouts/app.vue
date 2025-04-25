@@ -1,7 +1,18 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const isNavbarOpen = ref(false);
+const showNotifications = ref(false);
+</script>
 
 <template>
   <NuxtLayout name="private">
-    <slot />
+    <div class="">
+      <AppHeader
+        v-model:isNavbarOpen="isNavbarOpen"
+        v-model:showNotifications="showNotifications"
+      />
+      <main class="">
+        <slot />
+      </main>
+    </div>
   </NuxtLayout>
 </template>

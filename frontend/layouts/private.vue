@@ -1,31 +1,18 @@
 <script setup lang="ts">
-import { BACKEND_URL } from "~/config";
-import type { UserInfoI } from "~/types/user";
-
 const baseI18n = "layouts.private";
-const { $axios } = useNuxtApp();
 useColorModeStore();
 
-const isAuthenticated = ref<boolean | null>(null);
-const user = ref<UserInfoI>();
+const userStore = useAuthUserStore();
 
 onMounted(async () => {
-  try {
-    const response = await $axios.get<UserInfoI>(`${BACKEND_URL}/auth/user/me`);
-    user.value = response.data;
-    isAuthenticated.value = true;
-  } catch (error: any) {
-    if (error.status === 401) {
-      isAuthenticated.value = false;
-    }
-  }
+  await userStore.setup();
 });
 </script>
 
 <template>
   <main
     class="w-screen min-h-screen flex flex-col items-center justify-center px-4"
-    v-if="isAuthenticated === false"
+    v-if="userStore.isAuthenticated === false"
   >
     <h1 class="text-3xl">{{ $t(`${baseI18n}.error.title`) }}</h1>
     <p class="text-xl text-center">{{ $t(`${baseI18n}.error.message`) }}</p>
@@ -40,7 +27,7 @@ onMounted(async () => {
 
   <main
     class="w-screen min-h-screen flex flex-col items-center justify-center"
-    v-else-if="!user || isAuthenticated === null"
+    v-else-if="!userStore.user || userStore.isAuthenticated === null"
   >
     <div class="loader"></div>
   </main>

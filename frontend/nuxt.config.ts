@@ -7,7 +7,7 @@ export default defineNuxtConfig({
   css: ["~/assets/css/main.css"],
   vite: { plugins: [tailwindcss()] },
   dir: { pages: "routes" },
-  modules: ["@nuxtjs/i18n", "@nuxt/icon", "@pinia/nuxt"],
+  modules: ["@nuxtjs/i18n", "@nuxt/icon", "@pinia/nuxt", "@nuxt/image"],
   routeRules: {
     "/*/app": { ssr: false },
   },
