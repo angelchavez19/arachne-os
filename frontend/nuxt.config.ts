@@ -8,6 +8,9 @@ export default defineNuxtConfig({
   vite: { plugins: [tailwindcss()] },
   dir: { pages: "routes" },
   modules: ["@nuxtjs/i18n", "@nuxt/icon", "@pinia/nuxt"],
+  routeRules: {
+    "/*/app": { ssr: false },
+  },
   app: {
     head: {
       link: [

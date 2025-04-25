@@ -11,7 +11,7 @@ useSeoMeta({
 </script>
 
 <template>
-  <main class="w-full flex justify-center py-8">
+  <main class="w-full flex justify-center py-8 min-h-screen">
     <section
       class="flex flex-col items-center justify-center w-full max-w-md p-4 gap-6"
     >
@@ -23,6 +23,7 @@ useSeoMeta({
       </div>
 
       <Separator />
+
       <div class="flex justify-between items-center w-full px-6">
         <SelectorLanguage />
         <ClientOnly>

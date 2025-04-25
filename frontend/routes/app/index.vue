@@ -1,5 +1,5 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import Page from "~/pages/app/index/page.vue";
+</script>
 
-<template>App</template>
-
-<style scoped></style>
+<template><Page /></template>

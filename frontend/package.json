@@ -14,6 +14,7 @@
     "@nuxtjs/i18n": "^9.5.3",
     "@pinia/nuxt": "^0.11.0",
     "@tailwindcss/vite": "^4.1.4",
+    "axios": "^1.8.4",
     "nuxt": "^3.16.2",
     "pinia": "^3.0.2",
     "tailwindcss": "^4.1.4",
