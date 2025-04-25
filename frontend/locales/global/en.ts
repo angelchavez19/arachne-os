@@ -1,6 +1,6 @@
 export const globalEn = {
   layouts: {
-    app: {
+    private: {
       error: {
         title: "Session Expired",
         message: "Your session has expired. Please log in again.",

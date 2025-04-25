@@ -1,6 +1,6 @@
 export const globalEs = {
   layouts: {
-    app: {
+    private: {
       error: {
         title: "Sesión Expirada",
         message: "Tu sesión ha expirado. Por favor, inicia sesión nuevamente.",
