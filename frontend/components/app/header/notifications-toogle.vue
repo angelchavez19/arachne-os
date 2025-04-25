@@ -21,5 +21,3 @@ const showNotifications = defineModel("showNotifications", {
     />
   </button>
 </template>
-
-<style scoped></style>

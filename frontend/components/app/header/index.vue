@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import NotificationsToogle from "./notifications-toogle.vue";
+import Avatar from "./avatar/index.vue";
+
 const isNavbarOpen = defineModel("isNavbarOpen", {
   type: Boolean,
   required: true,
@@ -37,9 +40,9 @@ watch(isNavbarOpen, (newValue) => {
     </div>
 
     <div class="flex flex-1 items-center justify-end gap-2 w-full">
-      <AppNotificationsToogle v-model:showNotifications="showNotifications" />
+      <NotificationsToogle v-model:showNotifications="showNotifications" />
       <Separator orientation="vertical" class="h-10" />
-      <AppAvatar />
+      <Avatar />
     </div>
   </header>
 </template>
