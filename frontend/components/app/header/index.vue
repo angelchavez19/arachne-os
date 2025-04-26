@@ -22,7 +22,7 @@ watch(isNavbarOpen, (newValue) => {
 
 <template>
   <header
-    class="fixed top-0 left-0 w-full flex items-center justify-between gap-2 py-2 px-2 bg-[var(--c-bg)] shadow-[0_2px_6px_rgba(0,0,0,0.1)] dark:shadow-[0_2px_6px_rgba(0,0,0,0.3)]"
+    class="fixed top-0 left-0 w-full flex items-center justify-between gap-2 py-2 px-2 bg-[var(--c-bg)] shadow-[0_2px_6px_rgba(0,0,0,0.1)]"
   >
     <div class="flex items-center gap-1">
       <button

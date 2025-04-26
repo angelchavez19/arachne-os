@@ -10,6 +10,8 @@ const showNotifications = ref(false);
         v-model:isNavbarOpen="isNavbarOpen"
         v-model:showNotifications="showNotifications"
       />
+      <AppNav v-model:isNavbarOpen="isNavbarOpen" />
+      <AppNotifications v-model:showNotifications="showNotifications" />
       <main class="">
         <slot />
       </main>
