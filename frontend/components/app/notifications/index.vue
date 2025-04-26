@@ -6,13 +6,7 @@ const showNotifications = defineModel("showNotifications", {
 </script>
 
 <template>
-  <AppAside
-    v-model:isOpen="showNotifications"
-    :class="{
-      'translate-x-0': showNotifications,
-      'translate-x-full': !showNotifications,
-    }"
-  >
+  <AppAside v-model:isOpen="showNotifications" side="right">
     <h1>Navbar</h1>
   </AppAside>
 </template>
