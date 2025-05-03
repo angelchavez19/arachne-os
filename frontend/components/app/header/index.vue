@@ -2,6 +2,8 @@
 import NotificationsToogle from "./notifications-toogle.vue";
 import Avatar from "./avatar/index.vue";
 
+const windowSize = useWindowSizeStore();
+
 const isNavbarOpen = defineModel("isNavbarOpen", {
   type: Boolean,
   required: true,
@@ -13,10 +15,11 @@ const showNotifications = defineModel("showNotifications", {
 });
 
 watch(showNotifications, (newValue) => {
-  if (newValue) isNavbarOpen.value = false;
+  if (newValue && !windowSize.isDesktop) isNavbarOpen.value = false;
 });
+
 watch(isNavbarOpen, (newValue) => {
-  if (newValue) showNotifications.value = false;
+  if (newValue && !windowSize.isDesktop) showNotifications.value = false;
 });
 </script>
 

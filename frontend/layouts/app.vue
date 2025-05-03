@@ -12,9 +12,12 @@ const showNotifications = ref(false);
       />
       <AppNav v-model:isNavbarOpen="isNavbarOpen" />
       <AppNotifications v-model:showNotifications="showNotifications" />
-      <main class="">
+      <AppMain
+        :isNavbarOpen="isNavbarOpen"
+        :showNotifications="showNotifications"
+      >
         <slot />
-      </main>
+      </AppMain>
     </div>
   </NuxtLayout>
 </template>
