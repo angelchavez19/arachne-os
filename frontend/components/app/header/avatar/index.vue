@@ -5,6 +5,13 @@ import NavItem from "./nav-item.vue";
 const { user, logout } = useAuthUserStore();
 
 const showNav = ref(false);
+
+const fallbackAvatar = computed(() => {
+  return (
+    user?.avatar ||
+    `https://ui-avatars.com/api/?name=${user?.givenName}&background=137a7f&color=d9e1e6&size=40&rounded=true&bold=true&font-size=0.5`
+  );
+});
 </script>
 
 <template>
@@ -15,7 +22,7 @@ const showNav = ref(false);
     >
       <NuxtImg
         v-if="user"
-        :src="user.avatar"
+        :src="fallbackAvatar"
         alt="Avatar"
         width="40"
         height="40"
@@ -23,7 +30,7 @@ const showNav = ref(false);
         v-slot="{ src, isLoaded, imgAttrs }"
       >
         <img v-if="isLoaded" v-bind="imgAttrs" :src="src" />
-        <img v-else src="https://placehold.co/40x40" alt="placeholder" />
+        <img v-else :src="fallbackAvatar" alt="placeholder" />
       </NuxtImg>
     </button>
 

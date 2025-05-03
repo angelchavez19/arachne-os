@@ -14,15 +14,19 @@ const isOpen = defineModel("isOpen", {
 
 <template>
   <aside
-    class="fixed top-[63px] z-50 w-screen max-w-[320px] h-[calc(100vh-63px)] bg-(--c-bg) transition-transform duration-300 ease-in-out transform py-5 px-7 overflow-scroll"
+    class="fixed top-[63px] z-50 w-screen max-w-[320px] h-[calc(100vh-63px)] bg-(--c-bg) transition-transform duration-300 ease-in-out transform py-5 px-7"
     :class="{
       'translate-x-0': isOpen,
       '-translate-x-full': !isOpen && side === 'left',
       'translate-x-full': !isOpen && side === 'right',
       'right-0': side === 'right',
       'left-0': side === 'left',
-      'shadow-[2px_3px_6px_rgba(0,0,0,0.1)]': side === 'left',
-      'shadow-[-2px_3px_6px_rgba(0,0,0,0.1)]': side === 'right',
+    }"
+    :style="{
+      'box-shadow':
+        side === 'left'
+          ? '2px 3px 6px var(--c-border)'
+          : '-2px 3px 6px var(--c-border)',
     }"
   >
     <slot />
