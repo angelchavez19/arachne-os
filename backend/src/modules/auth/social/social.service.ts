@@ -5,6 +5,7 @@ import axios from 'axios';
 import { Response } from 'express';
 import { Model } from 'mongoose';
 import { ConfigCommonService } from 'src/common/config.common';
+import { ImageProvider } from 'src/providers/image/image.provider';
 import { User, UserDocument } from 'src/schemas/user.schema';
 
 @Injectable()
@@ -14,6 +15,7 @@ export class SocialService {
     private readonly userModel: Model<User>,
     private readonly config: ConfigCommonService,
     private readonly jwt: JwtService,
+    private readonly image: ImageProvider,
   ) {}
 
   async googleLogin(response: Response, code: string, lang: string) {
@@ -25,12 +27,16 @@ export class SocialService {
     });
 
     if (!user) {
+      const avatar = await this.image.uploadImageAvatarFromUrl(
+        userInfo.picture,
+      );
+
       const newUser = await this.userModel.create({
         googleId: userInfo.sub,
         givenName: userInfo.given_name,
         familyName: userInfo.family_name,
         email: userInfo.email,
-        avatar: userInfo.picture,
+        avatar,
       });
 
       this._redirectUser(response, newUser, redirectUrl);
@@ -40,8 +46,7 @@ export class SocialService {
     if (
       user.email !== userInfo.email ||
       user.givenName !== userInfo.given_name ||
-      user.familyName !== userInfo.family_name ||
-      user.avatar !== userInfo.picture
+      user.familyName !== userInfo.family_name
     ) {
       await this.userModel.updateOne(
         { googleId: userInfo.sub },
@@ -50,7 +55,6 @@ export class SocialService {
             email: userInfo.email,
             givenName: userInfo.given_name,
             familyName: userInfo.family_name,
-            avatar: userInfo.picture,
           },
         },
       );
