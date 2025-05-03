@@ -1,6 +1,6 @@
 <script setup lang="ts">
 interface Props {
-  side: "left" | "right";
+  side?: "left" | "right";
 }
 withDefaults(defineProps<Props>(), {
   side: "left",

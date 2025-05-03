@@ -22,5 +22,9 @@
     "vue": "^3.5.13",
     "vue-router": "^4.5.0",
     "vue3-google-login": "^2.0.33"
+  },
+  "devDependencies": {
+    "@iconify-json/mdi": "^1.2.3",
+    "@iconify-json/uil": "^1.2.3"
   }
 }

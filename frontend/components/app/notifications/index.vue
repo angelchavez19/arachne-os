@@ -7,7 +7,7 @@ const showNotifications = defineModel("showNotifications", {
 
 <template>
   <AppAside v-model:isOpen="showNotifications" side="right">
-    <h1>Navbar</h1>
+    <h1>Notifications</h1>
   </AppAside>
 </template>
 
