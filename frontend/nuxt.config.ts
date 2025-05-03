@@ -10,6 +10,7 @@ export default defineNuxtConfig({
   modules: ["@nuxtjs/i18n", "@nuxt/icon", "@pinia/nuxt", "@nuxt/image"],
   routeRules: {
     "/*/app": { ssr: false },
+    "/*/app/**": { ssr: false },
   },
   app: {
     head: {

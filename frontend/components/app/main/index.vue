@@ -10,7 +10,7 @@ const windowSize = useWindowSizeStore();
 
 <template>
   <main
-    class="fixed top-16 left-0 w-full py-4 px-6"
+    class="fixed top-16 left-0 w-full py-4 px-6 -z-0"
     :class="{
       'left-0': windowSize.isMobile || windowSize.isTablet,
       'left-64': windowSize.isDesktop && isNavbarOpen,

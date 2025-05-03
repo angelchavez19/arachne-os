@@ -35,7 +35,7 @@ const fallbackAvatar = computed(() => {
     </button>
 
     <div
-      class="absolute top-16 right-2 w-[calc(100vw-24px)] max-w-3xs bg-(--c-bg) rounded-xl outline-2 outline-(--c-primary) shadow-lg z-10"
+      class="absolute top-16 right-2 w-[calc(100vw-24px)] max-w-3xs bg-(--c-bg) rounded-xl outline-2 outline-(--c-primary) shadow-lg z-20"
       v-if="showNav"
     >
       <div class="flex flex-col py-2 px-4">
@@ -44,8 +44,8 @@ const fallbackAvatar = computed(() => {
         <Separator class="mb-4" />
 
         <nav class="flex flex-col gap-2">
-          <NavItem :to="$localePath(`/app/user/${user?._id}`)" icon="uil:user">
-            {{ $t(`${baseI18n}.nav.profile`) }}
+          <NavItem :to="$localePath(`/app/user/configuration`)" icon="mdi:cog">
+            {{ $t(`${baseI18n}.nav.configuration`) }}
           </NavItem>
 
           <Separator />
@@ -58,5 +58,3 @@ const fallbackAvatar = computed(() => {
     </div>
   </div>
 </template>
-
-<style scoped></style>

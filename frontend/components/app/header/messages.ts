@@ -1,7 +1,7 @@
 export const headerMessagesEn = {
   avatar: {
     nav: {
-      profile: "Profile",
+      configuration: "Configuration",
       logout: "Logout",
     },
   },
@@ -10,7 +10,7 @@ export const headerMessagesEn = {
 export const headerMessagesEs = {
   avatar: {
     nav: {
-      profile: "Perfil",
+      configuration: "Configuración",
       logout: "Cerrar sesión",
     },
   },
