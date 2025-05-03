@@ -1,23 +1,24 @@
 <script setup lang="ts">
-const isNavbarOpen = ref(false);
-const showNotifications = ref(false);
+const appStore = useAppStore();
 </script>
 
 <template>
   <NuxtLayout name="private">
-    <div class="">
-      <AppHeader
-        v-model:isNavbarOpen="isNavbarOpen"
-        v-model:showNotifications="showNotifications"
-      />
-      <AppNav v-model:isNavbarOpen="isNavbarOpen" />
-      <AppNotifications v-model:showNotifications="showNotifications" />
-      <AppMain
-        :isNavbarOpen="isNavbarOpen"
-        :showNotifications="showNotifications"
-      >
-        <slot />
-      </AppMain>
-    </div>
+    <AppHeader
+      v-model:isNavbarOpen="appStore.isNavbarOpen.storageValue"
+      v-model:showNotifications="appStore.showNotifications.storageValue"
+    />
+
+    <AppNav v-model:isNavbarOpen="appStore.isNavbarOpen.storageValue" />
+    <AppNotifications
+      v-model:showNotifications="appStore.showNotifications.storageValue"
+    />
+
+    <AppMain
+      :isNavbarOpen="appStore.isNavbarOpen.storageValue"
+      :showNotifications="appStore.showNotifications.storageValue"
+    >
+      <slot />
+    </AppMain>
   </NuxtLayout>
 </template>

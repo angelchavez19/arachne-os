@@ -14,6 +14,12 @@ const showNotifications = defineModel("showNotifications", {
   required: true,
 });
 
+watch(windowSize.size, (newValue) => {
+  if ((newValue.isTablet || newValue.isMobile) && showNotifications.value) {
+    showNotifications.value = false;
+  }
+});
+
 watch(showNotifications, (newValue) => {
   if (newValue && !windowSize.isDesktop) isNavbarOpen.value = false;
 });

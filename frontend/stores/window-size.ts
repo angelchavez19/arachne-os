@@ -1,5 +1,12 @@
 export const useWindowSizeStore = defineStore("window-size", () => {
-  const windowSize = ref({ width: 0, height: 0 });
+  const windowSize = ref({
+    width: 0,
+    height: 0,
+    isMobile: false,
+    isTablet: false,
+    isDesktop: false,
+    isLargeDesktop: false,
+  });
 
   const isMobile = computed(() => windowSize.value.width < 768);
   const isTablet = computed(
@@ -11,6 +18,10 @@ export const useWindowSizeStore = defineStore("window-size", () => {
   const updateWindowSize = () => {
     windowSize.value.width = window.innerWidth;
     windowSize.value.height = window.innerHeight;
+    windowSize.value.isMobile = isMobile.value;
+    windowSize.value.isTablet = isTablet.value;
+    windowSize.value.isDesktop = isDesktop.value;
+    windowSize.value.isLargeDesktop = isLargeDesktop.value;
   };
 
   onMounted(() => {

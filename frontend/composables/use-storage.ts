@@ -18,15 +18,10 @@ export const useLocalStorage = <T>(key: string, defaultValue: T) => {
 
   if (!item) setItem(defaultValue);
 
-  const setValue = (_value: any): void => {
-    setItem(_value);
-    storageValue.value = _value;
-  };
+  watch(storageValue, (newValue) => {
+    if (newValue !== null) setItem(newValue);
+    else removeItem(key);
+  });
 
-  const removeValue = (): void => {
-    removeItem(key);
-    storageValue.value = null;
-  };
-
-  return { storageValue, setValue, removeValue };
+  return { storageValue };
 };

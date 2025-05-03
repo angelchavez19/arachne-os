@@ -13,9 +13,8 @@ export const useColorModeStore = defineStore("colorMode", () => {
   setAtribute(colorStorage.storageValue.value);
 
   const tooggleColorMode = () => {
-    colorStorage.setValue(
-      colorStorage.storageValue.value === "light" ? "dark" : "light"
-    );
+    colorStorage.storageValue.value =
+      colorStorage.storageValue.value === "light" ? "dark" : "light";
 
     setAtribute(colorStorage.storageValue.value);
   };
